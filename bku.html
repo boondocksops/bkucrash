@@ -1,0 +1,2027 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Boondocks' pricing calculation</title>
+    <meta name="author" content="Austin Glenn">
+    <script>
+        var shopping_cart = {
+            items: {
+                // TICKET SALES
+                'attraction_pass': {
+                    price: 7.00,
+                    tax: 6.85,
+                    quantity: 0
+                },
+                'passenger_pass': {
+                    price: 3.50,
+                    tax: 6.85,
+                    quantity: 0
+                },
+                'miniature_golf': {
+                    price: 8.00,
+                    tax: 6.85,
+                    quantity: 0
+                },
+                'jr_mini_golf': {
+                    price: 5.00,
+                    tax: 6.85,
+                    quantity: 0
+                },
+                'kiddie_cove_wristband': {
+                    price: 3.50,
+                    tax: 6.85,
+                    quantity: 0
+                },
+                'team_batting_cage_rental_one_hour': {
+                    price: 20.00,
+                    tax: 0,
+                    quantity: 0
+                },
+                'batting_cage_rental_half_hour': {
+                    price: 15.00,
+                    tax: 0,
+                    quantity: 0
+                },
+                'batting_cage_rental_one_hour': {
+                    price: 25.00,
+                    tax: 0,
+                    quantity: 0
+                },
+                'batting_tokens': {
+                    price: 2.00,
+                    tax: 0,
+                    quantity: 0
+                },
+                'adult_unlimited': {
+                    price: 28.95,
+                    tax: 5.83,
+                    quantity: 0
+                },
+                'junior_unlimited': {
+                    price: 22.95,
+                    tax: 5.43,
+                    quantity: 0
+                },
+                'pick_2': {
+                    price: 15.95,
+                    tax: 4.95,
+                    quantity: 0
+                },
+                'pick_3': {
+                    price: 20.95,
+                    tax: 5.45,
+                    quantity: 0
+                },
+                'indoor_unlimited': {
+                    price: 22.95,
+                    tax: 5.62,
+                    quantity: 0
+                },
+                'indoor_upgrade_adult': {
+                    price: 10.00,
+                    tax: 5.83,
+                    quantity: 0
+                },
+                'indoor_upgrade_junior': {
+                    price: 0.00,
+                    tax: 5.43,
+                    quantity: 0
+                },
+                'twenty_five_for_twenty_game_card': {
+                    price: 20.00,
+                    tax: 0,
+                    quantity: 0
+                },
+                'fourty_for_twenty_game_card': {
+                    price: 20.00,
+                    tax: 0,
+                    quantity: 0
+                },
+                'purchase_value': {
+                    price: 1.00,
+                    tax: 0,
+                    quantity: 0
+                },
+                'half_price_adult_unlimited': {
+                    price: 14.48,
+                    tax: 5.83,
+                    quantity: 0
+                },
+                'half_price_junior_unlimited': {
+                    price: 11.48,
+                    tax: 5.43,
+                    quantity: 0
+                },
+                '23.14_fun_card_value_junior_with_tax': {
+                    price: 24.20,
+                    tax: 0,
+                    quantity: 0
+                },
+                '29.58_fun_card_value_adult_with_tax': {
+                    price: 30.64,
+                    tax: 0,
+                    quantity: 0
+                },
+                'wrist_coil': {
+                    price: 1.00,
+                    tax: 6.85,
+                    quantity: 0
+                },
+                'lanyards': {
+                    price: 2.00,
+                    tax: 6.85,
+                    quantity: 0
+                },
+                'sun_screen': {
+                    price: 1.50,
+                    tax: 6.85,
+                    quantity: 0
+                },
+                'gloves': {
+                    price: 2.00,
+                    tax: 6.85,
+                    quantity: 0
+                },
+                'twelve_buck_tuesday_pass': {
+                    price: 12.00,
+                    tax: 4.76,
+                    quantity: 0
+                },
+                'nineteen_buck_tuesday_pass': {
+                    price: 20.00,
+                    tax: 5.68,
+                    quantity: 0
+                },
+                'tuesday_upgrade': {
+                    price: 8.00,
+                    tax: 4.77,
+                    quantity: 0
+                },
+                'two_dollars_off_junior_unlimited': {
+                    price: -2.00,
+                    tax: 0,
+                    quantity: 0
+                },
+                'four_dollars_off_adult_unlimited': {
+                    price: -4.00,
+                    tax: 0,
+                    quantity: 0
+                },
+                'three_dollars_off_junior_unlimited': {
+                    price: -3.00,
+                    tax: 0,
+                    quantity: 0
+                },
+                'five_dollars_off_adult_unlimited': {
+                    price: -5.00,
+                    tax: 0,
+                    quantity: 0
+                },
+                'three_dollars_off_junior_unlimited_military': {
+                    price: -3.00,
+                    tax: 5.75,
+                    quantity: 0
+                },
+                'five_dollars_off_adult_unlimited_military': {
+                    price: -5.00,
+                    tax: 5.87,
+                    quantity: 0
+                },
+                // END TICKET SALES
+                // RESTAURANT
+                'personal_pizza': {
+                    price: 5.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'add_toppings_personal_pizza': {
+                    price: .75,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'add_half_toppings_personal_pizza': {
+                    price: .40,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'medium_pizza': {
+                    price: 11.50,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'add_toppings_medium_pizza': {
+                    price: 1.50,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'add_half_toppings_medium_pizza': {
+                    price: .75,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'large_pizza': {
+                    price: 14.50,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'add_toppings_large_pizza': {
+                    price: 1.75,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'add_half_toppings_large_pizza': {
+                    price: .85,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'family_pizza_special': {
+                    price: 17.95,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'add_toppings_family_pizza_special': {
+                    price: 1.75,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'large_1_topping_pizza_12_dollar_tuesday': {
+                    price: 9.99,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'large_pizza_combo': {
+                    price: 24.99,
+                    tax: 4.39,
+                    quantity: 0
+                },
+                'specialty_personal_pizza': {
+                    price: 8.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'add_toppings_specialty_personal_pizza': {
+                    price: .75,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'specialty_medium_pizza': {
+                    price: 17.50,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'add_toppings_specialty_medium_pizza': {
+                    price: 1.50,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'specialty_large_pizza': {
+                    price: 20.50,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'add_toppings_specialty_large_pizza': {
+                    price: 1.75,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'large_specialty_pizza_combo': {
+                    price: 27.99,
+                    tax: 5.61,
+                    quantity: 0
+                },
+                'cheese_burger': {
+                    price: 9.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'bacon_cheese_burger': {
+                    price: 9.75,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'jalapeno_bacon_burger': {
+                    price: 10.25,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'bbq_bacon_cheese_burger': {
+                    price: 10.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'over_easy_burger': {
+                    price: 9.75,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'turkey_bacon_ciabatta': {
+                    price: 9.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'philly_cheesesteak': {
+                    price: 10.75,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'chicken_bacon_ranch': {
+                    price: 10.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'triiple_decker_grilled_cheese': {
+                    price: 10.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'house_salad_entree': {
+                    price: 9.75,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'caesar_salad_entree': {
+                    price: 10.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'asian_salad': {
+                    price: 10.50,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'southwestern_salad': {
+                    price: 10.50,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'house_salad_appetizer': {
+                    price: 4.25,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'caesar_salad_appetizer': {
+                    price: 4.50,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'entree_combo': {
+                    price: 14.99,
+                    tax: 4.45,
+                    quantity: 0
+                },
+                'cheeseburger_kids': {
+                    price: 6.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'kids_hot_dog': {
+                    price: 6.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'chicken_nuggets': {
+                    price: 6.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'mac_and_cheese': {
+                    price: 6.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'grilled_cheese': {
+                    price: 6.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'build_your_own_sunday': {
+                    price: 3.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'brownie_sunday': {
+                    price: 6.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'caramel_apple_cheesecake_crisp': {
+                    price: 6.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'big_cookie_a_la_mode': {
+                    price: 6.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'root_beer_float': {
+                    price: 4.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'french_fries': {
+                    price: 3.75,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'onion_rings': {
+                    price: 9.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'mozzarella_sticks': {
+                    price: 7.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'chicken_tenders': {
+                    price: 9.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'loaded_nachos': {
+                    price: 11.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'chips_salsa_and_guacamole': {
+                    price: 8.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'spicy_buffalo_wings': {
+                    price: 10.50,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'sweet_and_sassy_wings': {
+                    price: 10.50,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'boneless_buffalo_wings_12ct': {
+                    price: 9.50,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'boneless_sweet_buffalo_12ct': {
+                    price: 9.50,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'chicken_street_tacos': {
+                    price: 9.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'barbacoa_street_tacos': {
+                    price: 9.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'veggie_platter': {
+                    price: 12.75,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'sampler_platter': {
+                    price: 18.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'appetizer_combo': {
+                    price: 19.99,
+                    tax: 6.28,
+                    quantity: 0
+                },
+                'soda': {
+                    price: 2.75,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'bottled_soda': {
+                    price: 2.25,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'bottled_water': {
+                    price: 2.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'juice': {
+                    price: 2.50,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'milk': {
+                    price: 2.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'small_frozen_drink': {
+                    price: 3.75,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'large_frozen_drink': {
+                    price: 4.75,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'hot_chocolate': {
+                    price: 2.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'coffee': {
+                    price: 2.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'gatorade': {
+                    price: 2.75,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'energy_drink_amped': {
+                    price: 4.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                // END RESTAURANT
+                // GROUPS
+                '3_hr_unlimited': {
+                    price: 17.95,
+                    tax: 5.85,
+                    quantity: 0
+                },
+                '3_hr_indoor_unlimited': {
+                    price: 17.95,
+                    tax: 4.80,
+                    quantity: 0
+                },
+                'all_day_unlimited': {
+                    price: 22.95,
+                    tax: 6.21,
+                    quantity: 0
+                },
+                'all_day_junior_unlimited': {
+                    price: 17.95,
+                    tax: 6.21,
+                    quantity: 0
+                },
+                'all_day_indoor_unlimited': {
+                    price: 19.95,
+                    tax: 5.45,
+                    quantity: 0
+                },
+                'group_attraction_pass': {
+                    price: 5.00,
+                    tax: 6.85,
+                    quantity: 0
+                },
+                'may_madness_basic': {
+                    price: 9.95,
+                    tax: 6.85,
+                    quantity: 0
+                },
+                'may_madness_upgrade': {
+                    price: 4.71,
+                    tax: 6.17,
+                    quantity: 0
+                },
+                'may_madness_deluxe': {
+                    price: 14.95,
+                    tax: 5.85,
+                    quantity: 0
+                },
+                'may_madness_all_day_upgrade': {
+                    price: 5.00,
+                    tax: 6.17,
+                    quantity: 0
+                },
+                // END GROUPS
+                // BIRTHDAY
+                'funtastic_birthday': {
+                    price: 14.95,
+                    tax: 5.47,
+                    quantity: 0
+                },
+                'funtastic_2': {
+                    price: 17.95,
+                    tax: 5.81,
+                    quantity: 0
+                },
+                'game_crazy_3_hour': {
+                    price: 21.95,
+                    tax: 4.73,
+                    quantity: 0
+                },
+                'game_crazy_all_day': {
+                    price: 25.95,
+                    tax: 5.35,
+                    quantity: 0
+                },
+                'rock_star_3_hour': {
+                    price: 21.95,
+                    tax: 6.21,
+                    quantity: 0
+                },
+                'rock_star_all_day': {
+                    price: 25.95,
+                    tax: 6.49,
+                    quantity: 0
+                },
+                'funtastic_birthday_entertainment_only': {
+                    price: 10.95,
+                    tax: 3.87,
+                    quantity: 0
+                },
+                'funtastic_2_entertainment_only': {
+                    price: 13.95,
+                    tax: 4.95,
+                    quantity: 0
+                },
+                'game_crazy_3_hour_entertainment_only': {
+                    price: 16.95,
+                    tax: 3.95,
+                    quantity: 0
+                },
+                'game_crazy_all_day_entertainment_only': {
+                    price: 21.95,
+                    tax: 4.76,
+                    quantity: 0
+                },
+                'rock_star_3_hour_entertainment_only': {
+                    price: 16.95,
+                    tax: 5.85,
+                    quantity: 0
+                },
+                'rock_star_all_day_entertainment_only': {
+                    price: 21.95,
+                    tax: 6.21,
+                    quantity: 0
+                },
+                'take_2_teen_party': {
+                    price: 20.95,
+                    tax: 6.05,
+                    quantity: 0
+                },
+                'game_on_teen_party_3_hour': {
+                    price: 24.95,
+                    tax: 5.09,
+                    quantity: 0
+                },
+                'game_on_teen_party_all_day': {
+                    price: 28.95,
+                    tax: 6.02,
+                    quantity: 0
+                },
+                'full_throttle_teen_party_3_hour': {
+                    price: 24.95,
+                    tax: 6.33,
+                    quantity: 0
+                },
+                'full_throttle_teen_party_all_day': {
+                    price: 28.95,
+                    tax: 6.23,
+                    quantity: 0
+                },
+                'large_pizza_bday_deal': {
+                    price: 9.99,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'pizza_bday_deal_add_toppings': {
+                    price: 1.75,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'pizza_bday_deal_add_half_toppings': {
+                    price: .75,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'pizza_party_deal': {
+                    price: 17.49,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'pizza_party_deal_add_toppings': {
+                    price: 1.75,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'pizza_party_deal_add_half_toppings': {
+                    price: .75,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'bday_pizza_meal_deal': {
+                    price: 3.95,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'bday_pizza_ultimate_pizza_meal_deal': {
+                    price: 4.95,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                // END BIRTHDAY
+                // SNACK BAR
+                'snack_bar_slice_of_cheese_pizza': {
+                    price: 4.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'snack_bar_slice_of_pepperoni_pizza': {
+                    price: 4.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'snack_bar_nachos': {
+                    price: 4.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'snack_bar_deluxe_pretzel': {
+                    price: 3.50,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'snack_bar_churro': {
+                    price: 3.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'snack_bar_extra_cheese': {
+                    price: .80,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'snack_bar_candy_small': {
+                    price: 1.50,
+                    tax: 0,
+                    quantity: 0
+                },
+                'snack_bar_candy_medium': {
+                    price: 2.00,
+                    tax: 0,
+                    quantity: 0
+                },
+                'snack_bar_candy_large': {
+                    price: 3.00,
+                    tax: 0,
+                    quantity: 0
+                },
+                'snack_bar_ice_cream_bar': {
+                    price: 1.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'snack_bar_cool_beads': {
+                    price: 4.00,
+                    tax: 0,
+                    quantity: 0
+                },
+                'snack_bar_single_scoop': {
+                    price: 2.50,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'snack_bar_double_scoop': {
+                    price: 3.25,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'snack_bar_triple_scoop': {
+                    price: 4.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'snack_bar_waffle_cone': {
+                    price: .50,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'snack_bar_soda_small': {
+                    price: 2.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'snack_bar_soda_medium': {
+                    price: 2.50,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'snack_bar_soda_large': {
+                    price: 3.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'snack_bar_icee_medium': {
+                    price: 3.75,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'snack_bar_icee_large': {
+                    price: 4.75,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'snack_bar_juice_gatorade': {
+                    price: 2.75,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'snack_bar_bottled_watter': {
+                    price: 2.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'snack_bar_kickstart': {
+                    price: 3.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'snack_bar_amp_rockstar': {
+                    price: 4.00,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'snack_bar_souvenir_bottle_with_soda': {
+                    price: 5.50,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'snack_bar_souvenir_bottle_soda_refill': {
+                    price: 1.25,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'snack_bar_souvenir_bottle_with_frozen_drink': {
+                    price: 6.50,
+                    tax: 7.85,
+                    quantity: 0
+                },
+                'snack_bar_souvenir_bottle_frozen_drink_refill': {
+                    price: 2.50,
+                    tax: 7.85,
+                    quantity: 0
+                }
+                // END SNACK BAR
+            },
+            costs: {
+                total: 0,
+                cash_given: 0,
+                change_due: 0
+            }
+        };
+
+        var pages = {
+            current_page: "ticket_sales_page",
+            all_pages: [
+                {
+                    id: "ticket_sales_page",
+                    forms: [
+                        'entitlements_form',
+                        'fun_packs_form',
+                        'merchandise_form',
+                        'twelve_buck_tuesday_form',
+                        'coupons_form'
+                    ]
+                },
+                {
+                    id: "restaurant_page",
+                    forms: [
+                        'pizza_form',
+                        'specialty_pizza_form',
+                        'salads_sandwiches_form',
+                        'kids_meals_deserts_form',
+                        'appetizers_drinks_form'
+                    ]
+                },
+                {
+                    id: "groups_page",
+                    forms: [
+                        'packages_form',
+                        'special_events_form'
+                    ]
+                },
+                {
+                    id: "birthday_page",
+                    forms: [
+                        'birthday_package_form',
+                        'entertainment_only_form',
+                        'teen_packages_form',
+                        'pizza_combos_form'
+                    ]
+                },
+                {
+                    id: "snack_bar_page",
+                    forms: [
+                        'snack_bar_hot_bites_form',
+                        'snack_bar_treats_ice_cream_form',
+                        'snack_bar_drinks_form'
+                    ]
+                }
+            ]
+        };
+
+
+        function setup() {
+            resetPageDisplay();
+        }
+
+        function resetPageDisplay() {
+            hideAllPages();
+            showCurrentPage();
+            hideAllForms();
+        }
+
+        function hideAllPages() {
+            var i, page;
+            for (i=0; i < pages.all_pages.length; i++) {
+                page = pages.all_pages[i];
+                hideElement(page.id);
+            }
+        }
+
+        function showCurrentPage() {
+            showElement(pages.current_page);
+        }
+
+
+        function togglePage(id) {
+            pages.current_page = id;
+            resetPageDisplay();
+        }
+
+        function toggleForm(id) {
+            hideAllForms();
+            showElement(id);
+        }
+
+
+        function calculatePrice(element, item_key) {
+            var item = getItem(item_key);
+            item.quantity = element.value;
+            updatePrice();
+        }
+
+
+        function updatePrice() {
+            var total,
+                key,
+                items,
+                item,
+                total_element;
+            items = shopping_cart.items;
+            total = 0;
+            for (key in items) {
+                item = items[key];
+                total += addItemCost(item);
+            }
+            total = makeDollarFormat(total)
+            shopping_cart.costs.total = total;
+            total_element = document.getElementById('cash_total');
+            total_element.value = total;
+            updateChangeDue();
+        }
+
+        function updateChangeDue() {
+            var cash_given_element,
+                cash_given,
+                change_due,
+                change_due_element,
+                total;
+            cash_given_element = document.getElementById('cash_given');
+            change_due_element = document.getElementById('cash_change_due');
+            total_element = document.getElementById('cash_total');
+            cash_given = cash_given_element.value;
+            total = total_element.value;
+
+            change_due = cash_given - total;
+            change_due = makeDollarFormat(change_due);
+
+            shopping_cart.costs.cash_given = cash_given;
+            shopping_cart.costs.change_due = change_due;
+            if (cash_given <= 0) {
+                change_due = "";
+            }
+            change_due_element.value = change_due;
+        }
+
+        function makeDollarFormat(value) {
+            return (Math.round(value * 100) / 100).toFixed(2);
+        }
+
+
+        function addItemCost(item) {
+            var quantity,
+                price,
+                tax;
+            quantity = item.quantity;
+            price = item.price;
+            tax = item.tax;
+            return (quantity * (price + (price * (tax / 100))));
+        }
+
+
+        function getItem(item_key) {
+            return shopping_cart.items[item_key];
+        }
+
+        function hideAllForms() {
+            var i, j, page;
+            for (i=0; i < pages.all_pages.length; i++) {
+                page = pages.all_pages[i];
+                for (j=0; j < page.forms.length; j++) {
+                    hideElement(page.forms[j]);
+                }
+            }
+        }
+
+
+        function hideElement(id) {
+            var form = document.getElementById(id);
+            form.style.display = 'none';
+        }
+
+
+        function showElement(id) {
+            var form = document.getElementById(id);
+            form.style.display = null;
+        }
+
+        
+    </script>
+    <style type="text/css">
+        body {
+            min-width: 400px;
+        }
+
+        .btn {
+            border: none;
+            font-size: 18px;
+            padding: 15px;
+            margin: 0 5px 10px 0;
+        }
+        
+        .ticket_sales-btn {
+            background-color: #9ECD65;
+        }
+
+        .restaurant-btn {
+            background-color: #E66565;
+        }
+
+        .groups-btn {
+            background-color: #FB83AD;
+        }
+
+        .birthday-btn {
+            background-color: #FFB366;
+        }
+
+        .snack_bar-btn {
+            background-color: #F8A0F8;
+        }
+
+        .ticket-form div,
+        .cash-form div {
+            display: inline-block;
+            width: 275px;
+            text-align: right;
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+        .cash-form {
+            float: left;
+            margin-right: 10px;
+        }
+
+        .page-container {
+            overflow-y: scroll;
+            margin-bottom: 133px;
+        }
+
+        .ticket-form input,
+        .cash-form input {
+            border: 2px solid #333;
+            font-size: 18px;
+            width: 100px;
+        }
+
+        .ticket-form label,
+        .cash-form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .ticket-container,
+        .cash-container {
+            padding: 10px;
+        }
+
+        .cash-container {
+            margin-top: 40px;
+            background-color: #eee;
+            border-top: 2px solid #aaa;
+            position: fixed;
+            width: 100%;
+            bottom: 0px;
+        }
+
+        .ticket-form input:disabled,
+        .cash-form input:disabled {
+            background-color: #ddd;
+        }
+
+    </style>
+
+</head>
+<body onload="setup()">
+    <section>
+        <nav>
+            <button class="ticket_sales-btn btn" onclick="togglePage('ticket_sales_page')">Ticket Sales</button>
+            <button class="restaurant-btn btn" onclick="togglePage('restaurant_page')">Restaurant</button>
+            <button class="groups-btn btn" onclick="togglePage('groups_page')">Groups</button>
+            <button class="birthday-btn btn" onclick="togglePage('birthday_page')">Birthday</button>
+            <button class="snack_bar-btn btn" onclick="togglePage('snack_bar_page')">Snack Bar</button>
+        </nav>
+    </section>
+
+
+    <!-- TICKET SALES -->
+    <div class="page-container" id="ticket_sales_page">
+        <h1>Ticket Sales</h1>
+        <section>
+            <nav>
+                <button class="ticket_sales-btn btn" onclick="toggleForm('entitlements_form')">Entitlements</button>
+                <button class="ticket_sales-btn btn" onclick="toggleForm('fun_packs_form')">Fun Packs</button>
+                <button class="ticket_sales-btn btn" onclick="toggleForm('merchandise_form')">Merchandise</button>
+                <button class="ticket_sales-btn btn" onclick="toggleForm('twelve_buck_tuesday_form')">12 Buck Tuesday</button>
+                <button class="ticket_sales-btn btn" onclick="toggleForm('coupons_form')">Coupons</button>
+            </nav>
+        </section>
+        <section class="ticket-container" id="entitlements_form">
+            <h2>Entitlements</h2>
+            <form class="ticket-form">
+                <label>
+                    <div>Attraction pass</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'attraction_pass')">
+                </label>
+                <label>
+                    <div>Passenger pass</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'passenger_pass')">
+                </label>
+                <label>
+                    <div>Miniature Golf</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'miniature_golf')">
+                </label>
+                <label>
+                    <div>Junior Miniature Golf</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'jr_mini_golf')">
+                </label>
+                <label>
+                    <div>Kiddie Cove</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'kiddie_cove_wristband')">
+                </label>
+                <label>
+                    <div>Team Batting Cage Rental 1 hour</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'team_batting_cage_rental_one_hour')">
+                </label>
+                <label>
+                    <div>Batting Cage Rental 1/2 hour</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'batting_cage_rental_half_hour')">
+                </label>
+                <label>
+                    <div>Batting Cage Rental 1 hour</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'batting_cage_rental_one_hour')">
+                </label>
+                <label>
+                    <div>Batting Tokens 24 pitches $2</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'batting_tokens')">
+                </label>
+            </form>
+        </section>
+        <section class="ticket-container" id="fun_packs_form">
+            <h2>Fun Packs</h2>
+            <form class="ticket-form">
+                <label>
+                    <div>Adult Unlimited</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'adult_unlimited')">
+                </label>
+                <label>
+                    <div>Junior Unlimited</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'junior_unlimited')">
+                </label>
+                <label>
+                    <div>Pick 2</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'pick_2')">
+                </label>
+                <label>
+                    <div>Pick 3</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'pick_3')">
+                </label>
+                <label>
+                    <div>Indoor Unlimited</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'indoor_unlimited')">
+                </label>
+                <label>
+                    <div>Indoor Upgrade Adult</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'indoor_upgrade_adult')">
+                </label>
+                <label>
+                    <div>Indoor Upgrade Junior</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'indoor_upgrade_junior')">
+                </label>
+                <label>
+                    <div>$25 for $20 game card</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'twenty_five_for_twenty_game_card')">
+                </label>
+                <label>
+                    <div>$40 for $20 game card</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'fourty_for_twenty_game_card')">
+                </label>
+                <label>
+                    <div>Purchase Value</div>
+                    <input type="number" min="0" autocomplete="off" onblur="calculatePrice(this, 'purchase_value')" step="0.25">
+                </label>
+                <label>
+                    <div>Half Price Adult Unlimited</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'half_price_adult_unlimited')">
+                </label>
+                <label>
+                    <div>Half Price Junior Unlimited</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'half_price_junior_unlimited')">
+                </label>
+            </form>
+        </section>
+        <section class="ticket-container" id="merchandise_form">
+            <h2>Merchandise</h2>
+            <form class="ticket-form">
+                <label>
+                    <div>Wrist Coil</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'wrist_coil')">
+                </label>
+                <label>
+                    <div>Lanyards</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'lanyards')">
+                </label>
+                <label>
+                    <div>Sunscreen</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'sun_screen')">
+                </label>
+                <label>
+                    <div>Gloves</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'gloves')">
+                </label>
+            </form>
+        </section>
+        <section class="ticket-container" id="twelve_buck_tuesday_form">
+            <h2>12 Buck Tuesday</h2>
+            <form class="ticket-form">
+                <label>
+                    <div>12 Buck Tuesday</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'twelve_buck_tuesday_pass')">
+                </label>
+                <label>
+                    <div>19 Buck Tuesday w/karts</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'nineteen_buck_tuesday_pass')">
+                </label>
+                <label>
+                    <div>Tuesday upgrade</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'tuesday_upgrade')">
+                </label>
+            </form>
+        </section>
+        <section class="ticket-container" id="coupons_form">
+            <h2>Coupons</h2>
+            <form class="ticket-form">
+                <label>
+                    <div>$2 Off Jr Unlimited</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'two_dollars_off_junior_unlimited')">
+                </label>
+                <label>
+                    <div>$4 Off Unlimited</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'four_dollars_off_adult_unlimited')">
+                </label>
+                <label>
+                    <div>$3 Off Jr Unlimited</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'three_dollars_off_junior_unlimited')">
+                </label>
+                <label>
+                    <div>$5 Off Unlimited</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'five_dollars_off_adult_unlimited')">
+                </label>
+                <label>
+                    <div>$3 Off Jr Unlimited Military</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'three_dollars_off_junior_unlimited_military')">
+                </label>
+                <label>
+                    <div>$5 Off Unlimited Military</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'five_dollars_off_adult_unlimited_military')">
+                </label>
+            </form>
+        </section>
+    </div>
+    <!-- END TICKET SALES -->
+
+
+    <!-- RESTAURANT -->
+    <div class="page-container" id="restaurant_page">
+        <h1>Restaurant</h1>
+        <section>
+            <nav>
+                <button class="restaurant-btn btn" onclick="toggleForm('pizza_form')">Pizza</button>
+                <button class="restaurant-btn btn" onclick="toggleForm('specialty_pizza_form')">Specialty Pizza</button>
+                <button class="restaurant-btn btn" onclick="toggleForm('salads_sandwiches_form')">Salads Sandwiches</button>
+                <button class="restaurant-btn btn" onclick="toggleForm('kids_meals_deserts_form')">Kids Meals Desserts</button>
+                <button class="restaurant-btn btn" onclick="toggleForm('appetizers_drinks_form')">Appetizers Drinks</button>
+            </nav>
+        </section>
+        <section class="ticket-container" id="pizza_form">
+            <h2>Pizza</h2>
+            <form class="ticket-form">
+                <label>
+                    <div>Personal Pizza</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'personal_pizza')">
+                </label>
+                <label>
+                    <div>Add Toppings (Personal)</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'add_toppings_personal_pizza')">
+                </label>
+                <label>
+                    <div>Add 1/2 Toppings (Personal)</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'add_half_toppings_personal_pizza')">
+                </label>
+                <label>
+                    <div>Medium Pizza</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'medium_pizza')">
+                </label>
+                <label>
+                    <div>Add Toppings (Medium)</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'add_toppings_medium_pizza')">
+                </label>
+                <label>
+                    <div>Add 1/2 Toppings (Medium)</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'add_half_toppings_medium_pizza')">
+                </label>
+                <label>
+                    <div>Large Pizza</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'large_pizza')">
+                </label>
+                <label>
+                    <div>Add Toppings (Large)</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'add_toppings_large_pizza')">
+                </label>
+                <label>
+                    <div>Add 1/2 Toppings (Large)</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'add_half_toppings_large_pizza')">
+                </label>
+                <label>
+                    <div>Family Pizza Special</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'family_pizza_special')">
+                </label>
+                <label>
+                    <div>Add Toppings (Family Pizza Special)</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'add_toppings_family_pizza_special')">
+                </label>
+                <label>
+                    <div>Large 1 Topping Pizza ($12 Tuesday)</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'large_1_topping_pizza_12_dollar_tuesday')">
+                </label>
+                <label>
+                    <div>Large Pizza Combo</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'large_pizza_combo')">
+                </label>
+            </form>
+        </section>
+        <section class="ticket-container" id="specialty_pizza_form">
+            <h2>Specialty Pizza</h2>
+            <h3>Works, Veggie, Meat Lovers, BBQ Chicken, Angry Hawaiian</h3>
+            <form class="ticket-form">
+                <label>
+                    <div>Personal Specialty Pizza</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'specialty_personal_pizza')">
+                </label>
+                <label>
+                    <div>Medium Specialty Pizza</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'specialty_medium_pizza')">
+                </label>
+                <label>
+                    <div>Large Specialty Pizza</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'specialty_large_pizza')">
+                </label>
+                <label>
+                    <div>Large Specialty Pizza Combo</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'large_specialty_pizza_combo')">
+                </label>
+            </form>
+        </section>
+        <section class="ticket-container" id="salads_sandwiches_form">
+            <h2>Salads Sandwiches</h2>
+            <form class="ticket-form">
+                <h3>Burgers</h3>
+                <label>
+                    <div>Cheese Burger</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'cheese_burger')">
+                </label>
+                <label>
+                    <div>Bacon Cheese Burger</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'bacon_cheese_burger')">
+                </label>
+                <label>
+                    <div>BBQ Bacon Cheese Burger</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'bbq_bacon_cheese_burger')">
+                </label>
+                <label>
+                    <div>Jalapeno Bacon Burger</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'jalapeno_bacon_burger')">
+                </label>
+                <label>
+                    <div>Over Easy Burger</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'over_easy_burger')">
+                </label>
+                <h3>Sandwiches</h3>
+                <label>
+                    <div>Turkey Bacon Ciabatta</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'turkey_bacon_ciabatta')">
+                </label>
+                <label>
+                    <div>Philly Cheesesteak</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'philly_cheesesteak')">
+                </label>
+                <label>
+                    <div>Chicken Bacon Ranch</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'chicken_bacon_ranch')">
+                </label>
+                <label>
+                    <div>Triple Decker Grilled Cheese</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'triiple_decker_grilled_cheese')">
+                </label>
+                <label>
+                    <div>Entree Combo</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'entree_combo')">
+                </label>
+                <h3>Salad</h3>
+                <label>
+                    <div>House Salad Entree</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'house_salad_entree')">
+                </label>
+                <label>
+                    <div>Caesar Salad Entree</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'caesar_salad_entree')">
+                </label>
+                <label>
+                    <div>Asian Salad</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'asian_salad')">
+                </label>
+                <label>
+                    <div>Southwestern Salad</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'southwestern_salad')">
+                </label>
+                <label>
+                    <div>House Salad Appetizer</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'house_salad_appetizer')">
+                </label>
+                <label>
+                    <div>Caesar Salad Appetizer</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'caesar_salad_appetizer')">
+                </label>
+            </form>
+        </section>
+        <section class="ticket-container" id="kids_meals_deserts_form">
+            <h2>Kids Meals Desserts</h2>
+            <form class="ticket-form">
+                <h3>Kids Meals</h3>
+                <label>
+                    <div>Cheeseburger (kids)</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'cheeseburger_kids')">
+                </label>
+                <label>
+                    <div>Kid's Hot Dog</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'kids_hot_dog')">
+                </label>
+                <label>
+                    <div>Chicken Nuggets</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'chicken_nuggets')">
+                </label>
+                <label>
+                    <div>Mac and Cheese</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'mac_and_cheese')">
+                </label>
+                <label>
+                    <div>Grilled Cheese</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'grilled_cheese')">
+                </label>
+                <h3>Desserts</h3>
+                <label>
+                    <div>Build Your Own Sundae</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'build_your_own_sunday')">
+                </label>
+                <label>
+                    <div>Brownie Sundae</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'brownie_sunday')">
+                </label>
+                <label>
+                    <div>Caramel Apple Cheesecake Crisp</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'caramel_apple_cheesecake_crisp')">
+                </label>
+                <label>
+                    <div>Big Cookie a la Mode</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'big_cookie_a_la_mode')">
+                </label>
+                <label>
+                    <div>Root Beer Float</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'root_beer_float')">
+                </label>
+            </form>
+        </section>
+        <section class="ticket-container" id="appetizers_drinks_form">
+            <h2>Appetizers Drinks</h2>
+            <form class="ticket-form">
+                <h3>Appetizers</h3>
+                <label>
+                    <div>French Fries</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'french_fries')">
+                </label>
+                <label>
+                    <div>Onion Rings</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'onion_rings')">
+                </label>
+                <label>
+                    <div>Mozzarella Sticks</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'mozzarella_sticks')">
+                </label>
+                <label>
+                    <div>Chicken Tenders</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'chicken_tenders')">
+                </label>
+                <label>
+                    <div>Loaded Nachos</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'loaded_nachos')">
+                </label>
+                <label>
+                    <div>Chips, Salsa, and Guacamole</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'chips_salsa_and_guacamole')">
+                </label>
+                <label>
+                    <div>Spicy Buffalo Wings</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'spicy_buffalo_wings')">
+                </label>
+                <label>
+                    <div>Sweet and Sassy Wings</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'sweet_and_sassy_wings')">
+                </label>
+                <label>
+                    <div>Bonless Buffalo Wings 12ct.</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'boneless_buffalo_wings_12ct')">
+                </label>
+                <label>
+                    <div>Boneless Sweet Buffalo 12ct.</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'boneless_sweet_buffalo_12ct')">
+                </label>
+                <label>
+                    <div>Chicken Street Tacos</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'chicken_street_tacos')">
+                </label>
+                <label>
+                    <div>Barbacoa Street Tacos</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'barbacoa_street_tacos')">
+                </label>
+                <label>
+                    <div>Veggie Platter</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'veggie_platter')">
+                </label>
+                <label>
+                    <div>Sampler Platter</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'sampler_platter')">
+                </label>
+                <label>
+                    <div>Appetizer Combo</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'appetizer_combo')">
+                </label>
+                <h3>Drinks</h3>
+                <label>
+                    <div>Soda</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'soda')">
+                </label>
+                <label>
+                    <div>Bottled Soda</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'bottled_soda')">
+                </label>
+                <label>
+                    <div>Bottled Water</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'bottled_water')">
+                </label>
+                <label>
+                    <div>Juice</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'juice')">
+                </label>
+                <label>
+                    <div>Milk</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'milk')">
+                </label>
+                <label>
+                    <div>Small Frozen Drink</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'small_frozen_drink')">
+                </label>
+                <label>
+                    <div>Large Frozen Drink</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'large_frozen_drink')">
+                </label>
+                <label>
+                    <div>Hot Chocolate</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'hot_chocolate')">
+                </label>
+                <label>
+                    <div>Coffee</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'coffee')">
+                </label>
+                <label>
+                    <div>Gatorade</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'gatorade')">
+                </label>
+                <label>
+                    <div>Energy Drink Amped</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'energy_drink_amped')">
+                </label>
+            </form>
+        </section>
+    </div>
+    <!-- END RESTAURANT -->
+
+
+    <!-- GROUPS -->
+    <div class="page-container" id="groups_page">
+        <h1>Groups</h1>
+        <section>
+            <nav>
+                <button class="groups-btn btn" onclick="toggleForm('packages_form')">Packages</button>
+                <button class="groups-btn btn" onclick="toggleForm('special_events_form')">Special Events</button>
+            </nav>
+        </section>
+        <section class="ticket-container" id="packages_form">
+            <h2>Packages</h2>
+            <form class="ticket-form">
+                <label>
+                    <div>3 hr Unlimited</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'3_hr_unlimited')">
+                </label>
+                <label>
+                    <div>3 hr Indoor Unlimited</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'3_hr_indoor_unlimited')">
+                </label>
+                <label>
+                    <div>All Day Unlimited</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'all_day_unlimited')">
+                </label>
+                <label>
+                    <div>All Day Junior Unlimited</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'all_day_junior_unlimited')">
+                </label>
+                <label>
+                    <div>All Day Indoor Unlimited</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'all_day_indoor_unlimited')">
+                </label>
+                <label>
+                    <div>Attraction Pass</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'group_attraction_pass')">
+                </label>
+            </form>
+        </section>
+        <section class="ticket-container" id="special_events_form">
+            <h2>Special Events</h2>
+            <form class="ticket-form">
+                <label>
+                    <div>May Madness Basic</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'may_madness_basic')">
+                </label>
+                <label>
+                    <div>May Madness Upgrade</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'may_madness_upgrade')">
+                </label>
+                <label>
+                    <div>May Madness Deluxe</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'may_madness_deluxe')">
+                </label>
+                <label>
+                    <div>May Madness All Day</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'may_madness_all_day_upgrade')">
+                </label>
+            </form>
+        </section>
+    </div>
+    <!-- END GROUPS -->
+
+
+    <!-- BIRTHDAY -->
+    <div class="page-container" id="birthday_page">
+        <h1>Birthday</h1>
+        <section>
+            <nav>
+                <button class="birthday-btn btn" onclick="toggleForm('birthday_package_form')">Birthday Package</button>
+                <button class="birthday-btn btn" onclick="toggleForm('entertainment_only_form')">Entertainment Only</button>
+                <button class="birthday-btn btn" onclick="toggleForm('teen_packages_form')">Teen Packages</button>
+                <button class="birthday-btn btn" onclick="toggleForm('pizza_combos_form')">Pizza Combos</button>
+            </nav>
+        </section>
+        <section class="ticket-container" id="birthday_package_form">
+            <h2>Birthday Package    </h2>
+            <form class="ticket-form">
+                <label>
+                    <div>Funtastic Birthday</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'funtastic_birthday')">
+                </label>
+                <label>
+                    <div>Funtastic 2</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'funtastic_2')">
+                </label>
+                <label>
+                    <div>Game Crazy (3 hr)</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'game_crazy_3_hour')">
+                </label>
+                <label>
+                    <div>Game Crazy (All day)</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'game_crazy_all_day')">
+                </label>
+                <label>
+                    <div>Rock Star (3 hr)</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'rock_star_3_hour')">
+                </label>
+                <label>
+                    <div>Rock Star (All day)</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'rock_star_all_day')">
+                </label>
+            </form>
+            <h3>DON'T FORGET THE DEPOSIT</h3>
+        </section>
+        <section class="ticket-container" id="entertainment_only_form">
+            <h2>Entertainment Only</h2>
+            <form class="ticket-form">
+                <label>
+                    <div>Funtastic Bday (EO)</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'funtastic_birthday_entertainment_only')">
+                </label>
+                <label>
+                    <div>Funtastic 2 (EO)</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'funtastic_2_entertainment_only')">
+                </label>
+                <label>
+                    <div>Game Crazy 3 hr (EO)</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'game_crazy_3_hour_entertainment_only')">
+                </label>
+                <label>
+                    <div>Game Crazy All day (EO)</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'game_crazy_all_day_entertainment_only')">
+                </label>
+                <label>
+                    <div>Rock Star 3 hr (EO)</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'rock_star_3_hour_entertainment_only')">
+                </label>
+                <label>
+                    <div>Rock Star All day (Wristband Only)</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'rock_star_all_day_entertainment_only')">
+                </label>
+            </form>
+            <h3>DON'T FORGET THE DEPOSIT</h3>
+        </section>
+        <section class="ticket-container" id="teen_packages_form">
+            <h2>Teen Packages</h2>
+            <form class="ticket-form">
+                <label>
+                    <div>Take 2 Teen Party</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'take_2_teen_party')">
+                </label>
+                <label>
+                    <div>Game On Teen Party (3 hr)</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'game_on_teen_party_3_hour')">
+                </label>
+                <label>
+                    <div>Game On Teen Party (All day)</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'game_on_teen_party_all_day')">
+                </label>
+                <label>
+                    <div>Full Throttle Teen Party (3 hr)</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'full_throttle_teen_party_3_hour')">
+                </label>
+                <label>
+                    <div>Full Throttle Teen Party (All day)</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'full_throttle_teen_party_all_day')">
+                </label>
+            </form>
+            <h3>DON'T FORGET THE DEPOSIT</h3>
+        </section>
+        <section class="ticket-container" id="pizza_combos_form">
+            <h2>Pizza Combos</h2>
+            <form class="ticket-form">
+                <label>
+                    <div>Large Pizza (Bday deal)</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'large_pizza_bday_deal')">
+                </label>
+                <label>
+                    <div>Add Toppings (Bday deal)</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'pizza_bday_deal_add_toppings')">
+                </label>
+                <label>
+                    <div>Add 1/2 Toppings (Bday deal)</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'pizza_bday_deal_add_half_toppings')">
+                </label>
+                <label>
+                    <div>Pizza Party Deal</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'pizza_party_deal')">
+                </label>
+                <label>
+                    <div>Add Toppings (Party deal)</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'pizza_party_deal_add_toppings')">
+                </label>
+                <label>
+                    <div>Add 1/2 Toppings (Party deal)</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'pizza_party_deal_add_half_toppings')">
+                </label>
+                <label>
+                    <div>B-Day Pizza Meal Deal</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'bday_pizza_meal_deal')">
+                </label>
+            </form>
+            <h3>DON'T FORGET THE DEPOSIT</h3>
+        </section>
+    </div>
+    <!-- END BIRTHDAY -->
+
+
+    <!-- SNACK BAR -->
+    <div class="page-container" id="snack_bar_page">
+        <h1>Snack Bar</h1>
+        <section>
+            <nav>
+                <button class="snack_bar-btn btn" onclick="toggleForm('snack_bar_hot_bites_form')">Hot Bites</button>
+                <button class="snack_bar-btn btn" onclick="toggleForm('snack_bar_treats_ice_cream_form')">Treats and Ice Cream</button>
+                <button class="snack_bar-btn btn" onclick="toggleForm('snack_bar_drinks_form')">Drinks</button>
+            </nav>
+        </section>
+        <section class="ticket-container" id="snack_bar_hot_bites_form">
+            <h2>Hot Bites</h2>
+            <form class="ticket-form">
+                <h3>Pizza</h3>
+                <label>
+                    <div>Slice of Cheese Pizza</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_slice_of_cheese_pizza')">
+                </label>
+                <label>
+                    <div>Slice of Pepperoni Pizza</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_slice_of_pepperoni_pizza')">
+                </label>
+                <h3>Nachos</h3>
+                <label>
+                    <div>Nachos</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_nachos')">
+                </label>
+                <h3>Snacks</h3>
+                <label>
+                    <div>Deluxe Pretzel</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_deluxe_pretzel')">
+                </label>
+                <label>
+                    <div>Churro</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_churro')">
+                </label>
+                <h3>Extras</h3>
+                <label>
+                    <div>Extra Cheese</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_extra_cheese')">
+                </label>
+            </form>
+        </section>
+        <section class="ticket-container" id="snack_bar_treats_ice_cream_form">
+            <h2>Treats Ice Cream</h2>
+            <form class="ticket-form">
+                <h3>Candy</h3>
+                <label>
+                    <div>Candy - Small</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_candy_small')">
+                </label>
+                <label>
+                    <div>Candy - Medium</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_candy_medium')">
+                </label>
+                <label>
+                    <div>Candy - Large</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_candy_large')">
+                </label>
+                <h3>Ice Cream</h3>
+                <label>
+                    <div>Single Scoop</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_single_scoop')">
+                </label>
+                <label>
+                    <div>Double Scoop</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_double_scoop')">
+                </label>
+                <label>
+                    <div>Triple Scoop</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_triple_scoop')">
+                </label>
+                <label>
+                    <div>Waffle Cone</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_waffle_cone')">
+                </label>
+                <label>
+                    <div>Ice Cream Bar</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_ice_cream_bar')">
+                </label>
+                <label>
+                    <div>Cool Beads</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_cool_beads')">
+                </label>
+            </form>
+        </section>
+        <section class="ticket-container" id="snack_bar_drinks_form">
+            <h2>Drinks</h2>
+            <form class="ticket-form">
+                <label>
+                    <div>Soda - Small</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_soda_small')">
+                </label>
+                <label>
+                    <div>Soda - Medium</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_soda_medium')">
+                </label>
+                <label>
+                    <div>Soda - Large</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_soda_large')">
+                </label>
+                <label>
+                    <div>Frozen Drink - Medium</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_icee_medium')">
+                </label>
+                <label>
+                    <div>Frozen Drink - Large</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_icee_large')">
+                </label>
+                <label>
+                    <div>Juice/Gatorade</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_juice_gatorade')">
+                </label>
+                <label>
+                    <div>Bottled Water</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_bottled_watter')">
+                </label>
+                <label>
+                    <div>Kickstart</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_kickstart')">
+                </label>
+                <label>
+                    <div>Amp - Rockstar</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_amp_rockstar')">
+                </label>
+                <label>
+                    <div>Souvenir Bottle w/Soda</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_souvenir_bottle_with_soda')">
+                </label>
+                <label>
+                    <div>Souvenir Bottle Refill w/Soda</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_souvenir_bottle_soda_refill')">
+                </label>
+                <label>
+                    <div>Souvenir Bottle w/Frozen Drink</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_souvenir_bottle_with_frozen_drink')">
+                </label>
+                <label>
+                    <div>Souvenir Bottle Refill w/Frozen</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_souvenir_bottle_frozen_drink_refill')">
+                </label>
+            </form>
+        </section>
+    </div>
+    <!-- END SNACK BAR -->
+
+
+    <!-- CASH BACK -->
+    <div class="cash-container">
+        <form class="cash-form">
+            <label>
+                <div>Total</div>
+                <input id="cash_total" type="number" autocomplete="off" disabled="">
+            </label>
+            <label>
+                <div>Cash Given</div>
+                <input id="cash_given" type="number" autocomplete="off" min="0" step="0.01" onblur="updateChangeDue()">
+            </label>
+            <label>
+                <div>Change Due</div>
+                <input id="cash_change_due" type="number" autocomplete="off" disabled="">
+            </label>
+        </form>
+    </div>
+    <!-- END CASH BACK -->
+
+
+</body>
+</html>
