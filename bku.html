@@ -143,12 +143,12 @@
                     tax: 6.85,
                     quantity: 0
                 },
-                'twelve_buck_tuesday_pass': {
+                'fourteen_buck_tuesday_pass': {
                     price: 12.00,
                     tax: 4.76,
                     quantity: 0
                 },
-                'nineteen_buck_tuesday_pass': {
+                'twenty-two_buck_tuesday_pass': {
                     price: 20.00,
                     tax: 5.68,
                     quantity: 0
@@ -889,7 +889,7 @@
                         'entitlements_form',
                         'fun_packs_form',
                         'merchandise_form',
-                        'twelve_buck_tuesday_form',
+                        'fourteen_buck_tuesday_form',
                         'coupons_form'
                     ]
                 },
@@ -1164,7 +1164,7 @@
                 <button class="ticket_sales-btn btn" onclick="toggleForm('entitlements_form')">Entitlements</button>
                 <button class="ticket_sales-btn btn" onclick="toggleForm('fun_packs_form')">Fun Packs</button>
                 <button class="ticket_sales-btn btn" onclick="toggleForm('merchandise_form')">Merchandise</button>
-                <button class="ticket_sales-btn btn" onclick="toggleForm('twelve_buck_tuesday_form')">12 Buck Tuesday</button>
+                <button class="ticket_sales-btn btn" onclick="toggleForm('fourteen_buck_tuesday_form')">12 Buck Tuesday</button>
                 <button class="ticket_sales-btn btn" onclick="toggleForm('coupons_form')">Coupons</button>
             </nav>
         </section>
@@ -1283,16 +1283,16 @@
                 </label>
             </form>
         </section>
-        <section class="ticket-container" id="twelve_buck_tuesday_form">
+        <section class="ticket-container" id="fourteen_buck_tuesday_form">
             <h2>14 Buck Tuesday</h2>
             <form class="ticket-form">
                 <label>
                     <div>14 Buck Tuesday</div>
-                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'twelve_buck_tuesday_pass')">
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'fourteen_buck_tuesday_pass')">
                 </label>
                 <label>
                     <div>22 Buck Tuesday w/karts</div>
-                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'nineteen_buck_tuesday_pass')">
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'twenty-two_buck_tuesday_pass')">
                 </label>
                 <label>
                     <div>Tuesday upgrade</div>
